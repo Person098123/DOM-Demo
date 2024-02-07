@@ -6,12 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let buttons = document.querySelectorAll('.button');
         buttons.forEach(button => button.addEventListener('click', processForm))
     }
-
+  
     // optionally update when fields update
     // tbd
    
     document.getElementById('name').addEventListener("change", function(e){
       let nameElement = document.getElementById('nametag');
+      nameElement.innerText = e.target.vlaue;
+    });
+
+    document.getElementById('type').addEventListener("change", function(e){
+      let nameElement = document.getElementById('info');
       nameElement.innerText = e.target.vlaue;
     });
 
@@ -25,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var formData = new FormData(e.target);
         formData= Object.fromEntries(formData);
         // output as an object
-        console.log(Object.fromEntries(formData));
+        // console.log(Object.fromEntries(formData));
       
         // ...or iterate through the name-value pairs
       //   for (var pair of formData.entries()) {
